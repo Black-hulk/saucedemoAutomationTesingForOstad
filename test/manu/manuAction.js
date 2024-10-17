@@ -15,6 +15,10 @@ export default class ManuAction{
         await manuObject.closeManu.click();
     }
 
+    async logout(){
+        
+    }
+
     async resetapp(){
         await this.clickOnManuIcon();
         await this.clickresetAppState();

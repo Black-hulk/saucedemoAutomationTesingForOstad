@@ -5,6 +5,8 @@ import CheckoutOverviewAction from "../crossCheckItemInfo/itemInfoCheckAction";
 import GetItemNameAndPriceAction from "../getItemName/getNameAndPriceAction";
 import LoginWithValidAction from "../loginWithVlid/loginwithValidAction";
 import ManuAction from "../manu/manuAction";
+import FinishMsgAction from "../verifyFinishMsg.js/finishMsgAction";
+
 
 const loginWithValidAction=new LoginWithValidAction();
 const manuAction=new ManuAction();
@@ -12,10 +14,12 @@ const addToCartAction=new AddToCartItemAction();
 const checkoutOverviewAction=new CheckoutOverviewAction();
 const getItemNameAndPriceAction=new GetItemNameAndPriceAction();
 const checkoutAction= new CheckoutAction();
+const finishMsgAction=new FinishMsgAction();
 
 const item1=29.99;
 const item2=9.99;
 const item3=15.99;
+const massage="Thank you for your order!";
 
 
 describe("Saucedemo Site Login Testing", ()=>{
@@ -53,10 +57,16 @@ describe("Should Login and add product on cart",()=>{
         expect(expectediItem2Name).toEqual(actualNameOfItem2);
         expect(expectediItem3Name).toEqual(actualNameOfItem3);
         expect(expectedTotalPrice).toEqual(actualTotalPrice);
-
-
-        
-
-
     });
+
+    it("Should match Finishing massage",async()=>{
+        await finishMsgAction.clickOnFinishButton();
+        const expectedMsg= await finishMsgAction.finishingMsg();
+        expect(expectedMsg).toEqual(massage);
+    })
+    it("Reset app And Logout", async()=>{
+        await manuAction.clickOnManuIcon();
+        await manuAction.clickresetAppState();
+        await manuAction.logout();
+    })
 })

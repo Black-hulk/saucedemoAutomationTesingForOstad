@@ -20,8 +20,6 @@ export default class CheckoutOverviewAction{
         const totalpricetext= await checkoutOverviewInfo.totalPrice.getText();
         const match= totalpricetext.match(/\$(\d+\.\d{2})/);
         const priceText= match ? match[1] : null;
-        // const parts = totalpricetext.split('"');
-        // const result = parts[3];
         const checkoutTotalPrice=parseFloat(priceText);
         return checkoutTotalPrice;
     }
@@ -33,4 +31,10 @@ export default class CheckoutOverviewAction{
         await this.getTotalPrice();
         await browser.pause(2000);
     }
+
+    async filterItemNameFromCart(){
+        const checkoutItemForFilter= await checkoutOverviewInfo.filterItemNameFromCart.getText();
+        return checkoutItemForFilter;
+    }
+    
 }

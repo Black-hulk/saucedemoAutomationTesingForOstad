@@ -1,7 +1,6 @@
 import AddToCartItemAction from "../addToCart/addToCartAction";
 import CheckoutAction from "../checkout/chackoutAction";
 import CheckoutOverviewAction from "../crossCheckItemInfo/itemInfoCheckAction";
-//import { CheckoutOverviewInfo } from "../crossCheckItemInfo/itemInfoCheckobject";
 import GetItemNameAndPriceAction from "../getItemName/getNameAndPriceAction";
 import LoginWithValidAction from "../loginWithVlid/loginwithValidAction";
 import ManuAction from "../manu/manuAction";

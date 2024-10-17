@@ -11,4 +11,8 @@ export class CheckoutOverviewInfo{
     get totalPrice(){
         return $("//div[@class='summary_subtotal_label']");
     }
+
+    get filterItemNameFromCart(){
+        return $("//a[@id='item_3_title_link']//div");
+    }
 }

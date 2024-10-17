@@ -11,7 +11,9 @@
   },
   "scripts": {
     "errorlogin": "npx wdio wdio.conf.js --spec ./test/specs/loginErrorTest.js",
-    "test2": "npx wdio wdio.conf.js --spec ./test/specs/validLoginTest.js"
+    "test2": "npx wdio wdio.conf.js --spec ./test/specs/validLoginTest.js",
+    "test3": "npx wdio wdio.conf.js --spec ./test/specs/task3.js"
+    
   },
   "dependencies": {
     "mocha": "^10.7.3"

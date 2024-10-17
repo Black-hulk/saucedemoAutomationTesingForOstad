@@ -13,7 +13,4 @@ export class GetItemNameAndPrice{
     get firstItemByFilter(){
         return $("//a[@id='item_3_title_link']//div");
     };
-    // get firstItemPriceByFilter(){
-    //     return $("//button[@id='remove-test.allthethings()-t-shirt-(red)']/preceding-sibling::div");
-    // };
 }

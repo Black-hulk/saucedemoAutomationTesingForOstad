@@ -19,6 +19,16 @@ export default class AddToCartItemAction{
         await addToCartItems.cartbutton.click();
     }
 
+    async ItemPriceForFilterItem(){
+        const price= await addToCartItems.firstItemPriceByFilter.getText();
+        const match= price.match(/\$(\d+\.\d{2})/);
+        const priceText= match ? match[1] : null;
+        // const parts = totalpricetext.split('"');
+        // const result = parts[3];
+        const priceInNumber=parseFloat(priceText);
+        return priceInNumber;
+    }
+
     async clickCheckoutButton(){
         await addToCartItems.clickOnCheckout.click();
     }

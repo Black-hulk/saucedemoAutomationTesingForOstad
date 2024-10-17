@@ -29,13 +29,5 @@ export default class GetItemNameAndPriceAction{
         return name;
     };
 
-    async ItemPriceForFilterItem(){
-        const price= await getItemNameAndPrice.firstItemPriceByFilter.getText();
-        const match= price.match(/\$(\d+\.\d{2})/);
-        const priceText= match ? match[1] : null;
-        // const parts = totalpricetext.split('"');
-        // const result = parts[3];
-        const priceInNumber=parseFloat(priceText);
-        return priceInNumber;
-    }
+    
 }

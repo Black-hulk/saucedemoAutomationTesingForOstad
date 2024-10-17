@@ -15,6 +15,9 @@ export class AddToCartItems{
     get cartbutton(){
         return $("//div[@id='shopping_cart_container']//a");
     }
+    get firstItemPriceByFilter(){
+        return $("//div[@class='inventory_item_price']");
+    };
 
     get clickOnCheckout(){
         return $("//button[@id='checkout']");

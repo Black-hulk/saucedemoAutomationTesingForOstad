@@ -18,6 +18,7 @@ const finishMsgAction=new FinishMsgAction();
 const filterandAddItemAction=new FilterandAddItemAction();
 
 const massage="Thank you for your order!";
+const price=15.99;
 
 describe("Verify with user performance_glitch_user",()=>{
     it("Shuld loging with user",async()=>{
@@ -36,6 +37,7 @@ describe("Verify with user performance_glitch_user",()=>{
     });
     it("Should Click add to cart icon and checkout",async ()=>{
         await addToCartAction.clickCartButton();
+        await addToCartAction.ItemPriceForFilterItem();
         await addToCartAction.clickCheckoutButton();
         await browser.pause(5000);
     });
@@ -45,13 +47,13 @@ describe("Verify with user performance_glitch_user",()=>{
     });
     it("Verify Cart item name and price",async()=>{
         const expectediItemNameForFilter= await checkoutOverviewAction.filterItemNameFromCart();
-        //const totalPrice=await checkoutOverviewAction.getTotalPrice();
+        const totalPrice=await checkoutOverviewAction.getTotalPrice();
 
         const actualItemName=await getItemNameAndPriceAction.ItemNameByFilter();
-        //const actualItemPrice=await getItemNameAndPriceAction.ItemPriceForFilterItem();
+        const actualItemPrice=price;
 
         expect(actualItemName).toEqual(expectediItemNameForFilter);
-        //expect(actualItemPrice).toEqual(totalPrice);
+        expect(actualItemPrice).toEqual(totalPrice);
     });
     it("Should match Finishing massage",async()=>{
         await finishMsgAction.clickOnFinishButton();

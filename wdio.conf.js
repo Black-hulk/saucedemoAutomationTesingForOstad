@@ -23,8 +23,17 @@ export const config = {
     specs: [
         './test/specs/loginErrorTest.js',
         './test/specs/validLoginTest.js',
-        './test/specs/task3.js"',
-    ],
+        './test/specs/task3.js',
+        ],
+        suites: {
+            all: [
+                './test/specs/loginErrorTest.js',
+                './test/specs/validLoginTest.js',
+                './test/specs/task3.js'
+            ],
+            
+        },
+    
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
